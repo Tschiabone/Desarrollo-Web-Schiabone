@@ -1,0 +1,50 @@
+body{
+    font-family: sans-serif;
+}
+.azul{
+    color:dodgerblue
+}
+
+.naranja{
+    color:chocolate
+}
+
+#rojo{
+    color:crimson
+}
+
+#verde{
+    color:forestgreen
+}
+
+#marron{
+    color:brown
+}
+
+#gris{
+    color:darkgrey
+}
+
+#rosa{
+    color:deeppink
+}
+
+.rojooscuro{
+    color:darkred
+}
+
+.verdeoscuro{
+    color:darkgreen
+}
+
+#marronoscuro{
+    color:maroon
+}
+
+#grisoscuro{
+    color:dimgrey
+}
+
+.rosaoscuro{
+    color:darkmagenta
+}

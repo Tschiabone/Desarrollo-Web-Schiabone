@@ -1,0 +1,61 @@
+#uno{
+    background-color: royalblue;
+    margin: 20px;
+    padding: 15px;
+}
+
+#dos{
+    background-image: url(../img/panda_rojo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#tres{
+    border: 2px solid red;
+    border-radius: 10px;
+}
+
+#cuatro{
+    font-weight: bold;
+    border: 2px solid black;
+    padding: 10px;
+}
+
+#cinco{
+    background-color: yellow;
+    text-align: center;
+}
+
+#seis{
+    border: 5px double purple;
+    background-color: gold;
+    margin: 40px;
+}
+
+#siete{
+    background: url(../img/panda_rojo.png) no-repeat bottom right;
+}
+
+#ocho{
+    background-image: url(../img/panda_rojo.png);
+    background-size: 50% auto;
+    background-repeat: repeat-y;
+}
+
+#nueve{
+    background-color: lightblue;
+    background-image: url(../img/panda_rojo.png);
+    background-position: right top;
+    background-repeat: no-repeat;
+}
+
+#nueve .btn{
+    background-color: red;
+    margin: 5px 0px;
+}
+
+#diez{
+    width: 50%;
+    border: 3px dotted green;
+    padding: 25px;
+}

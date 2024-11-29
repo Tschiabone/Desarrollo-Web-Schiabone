@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 5 - Con Funciones</title>
+    <script>
+        function iniciarJuego() {
+            const numeroSecreto = Math.floor(Math.random() * 11);
+
+            function adivinarNumero() {
+                let adivinanza = null;
+
+                while (adivinanza !== numeroSecreto) {
+                    adivinanza = parseInt(prompt("Adivina el número entre 0 y 10:"));
+
+                    if (adivinanza < numeroSecreto) {
+                        alert("Tu número es menor al número a adivinar");
+                    } else if (adivinanza > numeroSecreto) {
+                        alert("Tu número es mayor al número a adivinar");
+                    }
+                }
+                alert(`¡Felicitaciones! Has adivinado el número ${numeroSecreto}`);
+            }
+
+            adivinarNumero();
+        }
+    </script>
+</head>
+<body onload="iniciarJuego()">
+</body>
+</html>

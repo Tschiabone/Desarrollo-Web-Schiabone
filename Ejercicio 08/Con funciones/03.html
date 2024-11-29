@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 3 - Con Funciones</title>
+    <script>
+        function determinarTipoTriangulo() {
+            const ladoA = parseFloat(prompt("Ingrese el primer lado del triángulo:"));
+            const ladoB = parseFloat(prompt("Ingrese el segundo lado del triángulo:"));
+            const ladoC = parseFloat(prompt("Ingrese el tercer lado del triángulo:"));
+            let tipoTriangulo;
+
+            if (ladoA === ladoB && ladoB === ladoC) {
+                tipoTriangulo = "equilátero";
+            } else if (ladoA === ladoB || ladoA === ladoC || ladoB === ladoC) {
+                tipoTriangulo = "isósceles";
+            } else {
+                tipoTriangulo = "escaleno";
+            }
+
+            document.getElementById("resultado").textContent = `El triángulo es ${tipoTriangulo}`;
+        }
+    </script>
+</head>
+<body onload="determinarTipoTriangulo()">
+    <p id="resultado"></p>
+</body>
+</html>

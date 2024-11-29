@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 2 - Con Funciones</title>
+    <script>
+        function calcularRectangulo() {
+            const lado1 = parseFloat(prompt("Ingrese el primer lado del rectángulo:"));
+            const lado2 = parseFloat(prompt("Ingrese el segundo lado del rectángulo:"));
+            const perimetro = 2 * (lado1 + lado2);
+            const area = lado1 * lado2;
+            document.getElementById("perimetro").textContent = `El perímetro del rectángulo es ${perimetro}`;
+            document.getElementById("area").textContent = `El área del rectángulo es ${area}`;
+        }
+    </script>
+</head>
+<body onload="calcularRectangulo()">
+    <p id="perimetro"></p>
+    <p id="area"></p>
+</body>
+</html>

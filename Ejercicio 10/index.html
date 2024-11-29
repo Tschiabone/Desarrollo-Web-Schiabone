@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Viaje al centro de la Tierra</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: "Times New Roman", serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Contenedor principal centrado con un ancho fluido del 80% */
+        #container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        /* Encabezado principal centrado */
+        h1 {
+            text-align: center;
+            font-size: 28px;
+            margin: 20px 0;
+        }
+
+        h2 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            font-size: 18px;
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        p {
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+
+        /* Sidebar y contenido principal */
+        #sidebar {
+            width: 25%;
+            float: left;
+            margin-right: 2%;
+        }
+
+        #content {
+            width: 73%;
+            float: left;
+        }
+
+        /* Limpiar flotados al final */
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Estilos de listas */
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: disc;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        /* Estilo específico para la lista de datos del libro */
+        .book-data li {
+            margin-bottom: 5px;
+        }
+
+        /* Marco negro para la sección de personajes */
+        #personajes {
+            border: 1px solid black;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        /* Divisiones dentro de la sección de personajes */
+        .personajes-principales {
+            float: left;
+            width: 45%;
+        }
+
+        .personajes-secundarios {
+            float: right;
+            width: 45%;
+        }
+
+        .whatsapp-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            
+            border-radius: 50%;
+            padding: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .whatsapp-icon img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .jarallax {
+            position: relative;
+            z-index: 0;
+        }
+        .jarallax > .jarallax-img {
+            position: absolute;
+            object-fit: cover;
+            /* support for plugin https://github.com/bfred-it/object-fit-images */
+            font-family: 'object-fit: cover;';
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        body.jarallax {
+            position: relative;
+            min-height: 100vh; /* Asegurar que ocupa toda la pantalla */
+            background-color: #000; /* Color de respaldo */
+        }
+
+        .jarallax > .jarallax-img {
+            position: absolute;
+            object-fit: cover;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Asegurar que no interfiera con el contenido */
+        }
+        .bxslider {
+            max-width: 600px; /* Define un ancho para el slider */
+            margin: 0 auto;   /* Centra el slider horizontalmente */
+            list-style: none; /* Elimina viñetas */
+            padding: 0;
+        }
+        .bxslider img {
+            max-width: 100%; /* Ajusta las imágenes al contenedor */
+            display: block;  /* Asegura el alineamiento */
+            margin: 0 auto;
+        }
+
+
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/css/lightbox.min.css" integrity="sha512-HGdPeNh3rzF9bOtJ5TXMK+uQusA+fX34dChE2DN15jlnVLUbxZXSzqUE8e6ygTCsogQXjNZUI0Dx/AsJdYEw+w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bxslider@4.2.17/dist/jquery.bxslider.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bxslider@4.2.17/dist/jquery.bxslider.min.js"></script>
+
+    <script>
+      $(document).ready(function(){
+        $(".bxslider").bxSlider();
+      });
+    </script>
+</head>
+
+<body class="jarallax">
+    <img class="jarallax-img" src="img/centro-de-la-tierra.jpg" alt="Fondo de la página">
+
+    <div id="container">
+        <h1>Viaje al centro de la Tierra</h1>
+
+        <div class="clearfix">
+            <!-- Sidebar con los datos del libro -->
+            <div id="sidebar">
+                <h2>Datos del libro</h2>
+                <ul class="book-data">
+                    <li>Título original: Voyage au centre de la Terre</li>
+                    <li>Autor: Julio Verne</li>
+                    <li>Género: Novela</li>
+                    <li>Año de publicación: 1862</li>
+                    <li>País: Francia</li>
+                    <li>Páginas: 360</li>
+                </ul>
+            </div>
+
+            <!-- Contenido principal (Resumen y Personajes) -->
+            <div id="content">
+                <h2>Resumen</h2>
+                <p>La novela cuenta la historia de Axel, quien vive con su tío Otto Lidenbrock en Hamburgo. Después de descifrar un
+                    criptograma en un manuscrito islandés, el tío decide viajar a Islandia para buscar el centro de la Tierra. Axel,
+                    su tío y un guía llamado Hans emprenden un peligroso viaje al volcán Snæfellsjökull, donde encuentran la entrada
+                    al centro de la Tierra. A lo largo del camino, enfrentan dificultades como la falta de agua y la pérdida de Axel.
+                    Finalmente, llegan a una gran caverna donde encuentran un mar y se embarcan en una peligrosa travesía,
+                    encontrando monstruos marinos en el camino.</p>
+
+                <p>La historia comienza con Axel describiendo la vida en la casa de su tío y cómo descifran el criptograma que los
+                    lleva a Islandia. Después de llegar a la cima del volcán, descienden por una chimenea y se pierden, tomando el
+                    camino equivocado. Sin embargo, logran sobrevivir a la sed y encuentran agua bajo las rocas. Axel se pierde
+                    temporalmente pero finalmente se reúne con sus compañeros y encuentran una gran caverna con un mar. Después de
+                    embarcarse en una balsa, se encuentran con monstruos marinos pero logran sobrevivir.</p>
+
+                <p>En resumen, la historia es una emocionante aventura de tres hombres que buscan llegar al centro de la Tierra. A
+                    lo largo del camino, enfrentan peligros y dificultades, pero logran sobrevivir gracias a su ingenio y
+                    determinación. La novela muestra la fascinación de Verne por la ciencia y la exploración, así como su habilidad
+                    para crear una emocionante trama.</p>
+
+                <div id="personajes">
+                    <h2>Personajes</h2>
+
+                    <div class="personajes-principales">
+                        <h3>Principales:</h3>
+                        <ul>
+                            <li>Axel: sobrino del profesor Lidenbrock.</li>
+                            <li>Otto Lidenbrock: profesor de mineralogía, tío de Axel, padrino de Gräuben y organizador del viaje al
+                                centro de la Tierra. Es un sabio egoísta.</li>
+                            <li>Hans: antes cazador de unas aves islandesas llamadas eíderes y luego guía islandés que contrata
+                                Lidenbrock para el viaje al centro de la Tierra.</li>
+                        </ul>
+                    </div>
+
+                    <div class="personajes-secundarios">
+                        <h3>Secundarios:</h3>
+                        <ul>
+                            <li>Gräuben: novia de Axel, ahijada de Lidenbrock.</li>
+                            <li>Marta: empleada del profesor Lidenbrock.</li>
+                            <li>Arne Saknusemm: escritor del pergamino que encontró Otto Lidenbrock para iniciar el viaje al centro de
+                                la tierra.</li>
+                        </ul>
+                    </div>
+                    <div style="clear: both;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="owl-carousel owl-theme">
+        <div class="item"><img src = "img/centro-de-la-tierra.jpg" alt = ""></div>
+        <div class="item"><img src = "img/hqdefault.jpg" alt = ""></div>
+        <div class="item"><img src = "img/Julio-Verne-Viaje-al-centro-de-la-tierra-Imagen-1.jpg" alt = ""></div>
+        <div class="item"><img src = "img/ts2marcin_27863_realistic_photo_of_What_is_the_plot_of_Jules_Ve_12289e2c-fd00-41b3-95e6-015a5660ae42-1024x574.png" alt = ""></div>
+        <div class="item"><img src = "img/viajealcentrodelatierra.jpg" alt = ""></div>
+    </div>
+
+    <div id="gallery">
+        <a href="img/hqdefault.jpg" data-lightbox="roadtrip">
+            <img src="img/hqdefault.jpg" alt="Imagen 1" style="width: 150px; margin: 5px;">
+        </a>
+        <a href="img/Julio-Verne-Viaje-al-centro-de-la-tierra-Imagen-1.jpg" data-lightbox="roadtrip">
+            <img src="img/Julio-Verne-Viaje-al-centro-de-la-tierra-Imagen-1.jpg" alt="Imagen 2" style="width: 150px; margin: 5px;">
+        </a>
+        <a href="img/viajealcentrodelatierra.jpg" data-lightbox="roadtrip">
+            <img src="img/viajealcentrodelatierra.jpg" alt="Imagen 3" style="width: 150px; margin: 5px;">
+        </a>
+    </div>
+    
+    <ul class="bxslider">
+        <li><img src="img/centro-de-la-tierra.jpg" alt="Imagen 1"></li>
+        <li><img src="img/hqdefault.jpg" alt="Imagen 2"></li>
+        <li><img src="img/Julio-Verne-Viaje-al-centro-de-la-tierra-Imagen-1.jpg" alt="Imagen 3"></li>
+        <li><img src="img/ts2marcin_27863_realistic_photo_of_What_is_the_plot_of_Jules_Ve_12289e2c-fd00-41b3-95e6-015a5660ae42-1024x574.png" alt="Imagen 4"></li>
+        <li><img src="img/viajealcentrodelatierra.jpg" alt="Imagen 5"></li>
+    </ul>
+   
+
+
+    <!-- Icono de WhatsApp en la parte inferior derecha -->
+    <a href="https://wa.me/123456789" class="whatsapp-icon" target="_blank">
+        <img src="/img/whatsapp-logo-whatsapp-icon-whatsapp-transparent-free-png.webp" alt="WhatsApp" />
+    </a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jarallax/2.2.1/jarallax.min.js" integrity="sha512-q3LhUlXpvwtaAgWNbnqlMYe2wu9ELY4OVPxofREHs7zCDhw7YN7S46VOso6US3QgeehHNPh06h6E5/sFIMEDOA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/js/lightbox.min.js" integrity="sha512-KbRFbjA5bwNan6DvPl1ODUolvTTZ/vckssnFhka5cG80JVa5zSlRPCr055xSgU/q6oMIGhZWLhcbgIC0fyw3RQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $('.owl-carousel').owlCarousel({
+            loop:true,
+            margin:10,
+            nav:true,
+            responsive:{
+                0:{
+                    items:1
+                },
+                600:{
+                    items:3
+                },
+                1000:{
+                    items:3
+                }
+            }
+        })
+        $('body.jarallax').jarallax({
+            speed: 0.5
+        });
+
+    </script>
+    <script>
+        $('.bxslider').bxSlider({
+            mode: 'vertical',      // Desplazamiento vertical
+            slideMargin: 10,       // Margen entre imágenes
+            auto: true,            // Reproducción automática
+            pause: 3000,           // Tiempo entre deslizamientos
+            infiniteLoop: true,    // Permite un ciclo continuo
+            adaptiveHeight: true,  // Ajusta la altura del contenedor dinámicamente
+            controls: true         // Habilita las flechas de navegación
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 3 - Procedural</title>
+</head>
+<body>
+    <script>
+        var ladoA = parseFloat(prompt("Ingrese el primer lado del triángulo:"));
+        var ladoB = parseFloat(prompt("Ingrese el segundo lado del triángulo:"));
+        var ladoC = parseFloat(prompt("Ingrese el tercer lado del triángulo:"));
+        var tipoTriangulo = "";
+        
+        if (ladoA === ladoB && ladoB === ladoC) {
+            tipoTriangulo = "equilátero";
+        } else if (ladoA === ladoB || ladoA === ladoC || ladoB === ladoC) {
+            tipoTriangulo = "isósceles";
+        } else {
+            tipoTriangulo = "escaleno";
+        }
+
+        document.write("<p>El triángulo es " + tipoTriangulo + "</p>");
+    </script>
+</body>
+</html>

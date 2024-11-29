@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 4 - Con Funciones</title>
+    <script>
+        function obtenerNumerosYMostrarMayorMenor() {
+            const numeros = [];
+            for (let i = 0; i < 5; i++) {
+                numeros[i] = parseFloat(prompt(`Ingrese el número ${i + 1}:`));
+            }
+
+            const max = Math.max(...numeros);
+            const min = Math.min(...numeros);
+
+            const lista = document.getElementById("listaResultados");
+            lista.innerHTML = `
+                <li>El número mayor es: ${max}</li>
+                <li>El número menor es: ${min}</li>
+            `;
+        }
+    </script>
+</head>
+<body onload="obtenerNumerosYMostrarMayorMenor()">
+    <ul id="listaResultados"></ul>
+</body>
+</html>
